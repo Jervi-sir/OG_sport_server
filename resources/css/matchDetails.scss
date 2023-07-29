@@ -1,0 +1,181 @@
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+
+    h2 {
+        color: #000;
+        text-align: center;
+        font-size: 24px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+   .card {
+        border-radius: 20px;
+        border: 1px solid #000;
+        padding: 10px 15px;
+        display: flex;
+        flex: 1;
+        .info {
+            .name {
+                color: #000;
+                font-family: Inter;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+            .points {
+                color: rgba(0, 0, 0, 0.52);
+                font-family: Inter;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+   } 
+   .vs {
+        color: #000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+   }
+}
+
+
+.teams-details {
+    color: #000;
+    text-align: end;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 0 20px;
+}
+
+.objective {
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.lucky-cards {
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .card-list {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.confirm-score {
+    h3 {
+        color: #000;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        padding: 0;
+        margin: 0;
+    }
+    .team {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        .card {
+            border-radius: 20px;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            padding: 5px 7px;
+            flex: 1;
+            .info {
+                .name {
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                }
+                .points {
+                    color: rgba(0, 0, 0, 0.52);
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+            }
+        }
+        .score {
+            border-radius: 20px;
+            background: #D9D9D9;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+        }
+        .ready {
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border-radius: 20px;
+            background: #38AF36;
+            padding: 10px 20px;
+        }
+    }
+}
+
+.call-to-action {
+    text-align: center;
+    button {
+        border-radius: 20px;
+        background: #671086;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+}

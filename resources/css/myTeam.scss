@@ -1,0 +1,152 @@
+.header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+
+    h2 {
+        color: #000;
+        text-align: center;
+        font-size: 24px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
+
+.team-card {
+    border-radius: 20px;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 25px;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        .left {
+            display: flex;
+            gap: 10px;
+            img {
+                filter: invert(1);
+            }
+        }
+        .middle {
+            h3 {
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                font-size: 24px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+            .points {
+                color: rgba(0, 0, 0, 0.52);
+                text-align: center;
+                font-size: 24px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+        }
+
+    }
+    .actions {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        button {
+            border-radius: 20px;
+            background: #38AF36;
+            color: #FFF;
+            text-align: center;
+            font-size: 13px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+        .team-state {
+            color: #000;
+            text-align: center;
+            font-size: 14px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+    }
+}
+
+.game-played {
+    h5 {
+        color: #000;
+        font-size: 24px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .game-card-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        .card-game-played {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #000;
+            text-align: center;
+            font-size: 32px;
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border-radius: 20px;
+            padding: 10px 25px;
+            &.green {
+                background: #04D800;
+            }
+            &.red {
+                background: #D00;
+            }
+            &.grey {
+                background: rgba(0, 0, 0, 0.52);
+            }
+        }
+    }
+}
+
+.players {
+    h5 {
+        color: #000;
+        font-size: 24px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .player-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            span {
+                color: #000;
+                text-align: center;
+                font-size: 24px;
+                font-family: Inter;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+        }
+    }
+}
