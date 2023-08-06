@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('myTeams')->middleware('auth')->group(function() {
+Route::prefix('myTeams')->group(function() {
     Route::get('list-all', [TeamController::class, 'getMyTeams'])->name('myTeams.all');
     Route::get('id/{team_id}/get-members', [TeamController::class, 'getThisTeamMembers'])->name('myTeams.thisMembers');
     Route::get('membersSearch', [TeamController::class, 'searchMembers'])->name('myTeam.searchMembers');
     Route::post('invite-member', [TeamController::class, 'inviteMemeber'])->name('myTeam.inviteMember');
 });
 
-Route::prefix('games')->middleware('auth')->group(function() {
+Route::prefix('games')->group(function() {
     Route::get('search-team', [GameController::class, 'searchTeam'])->name('games.searchTeam');
     Route::post('invite-team/{team_id}', [GameController::class, 'inviteTeam'])->name('games.inviteTeam');
     Route::get('create-game', [GameController::class, 'createGame'])->name('games.create');

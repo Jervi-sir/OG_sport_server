@@ -8,6 +8,10 @@ use App\Models\Team;
 
 class GameController extends Controller
 {
+
+    public function searchTeam () {
+        
+    }
     // List all games
     public function index()
     {
