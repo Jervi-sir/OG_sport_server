@@ -20,11 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
-            $table->foreignId('position_id')->constrained();
-            $table->foreignId('skill_id')->constrained();
-            $table->integer('skill_level');
-            $table->text('contact_details');
-
+            $table->tinyInteger('hasCompletedRegistery')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

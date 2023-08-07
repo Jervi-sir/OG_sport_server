@@ -6,22 +6,23 @@ Project Description
 
 ### Todo
 
-- [ ] show team rewards 
-- [ ] show player status
-- [ ] list teams as a simple user
-- [ ] list my teams 
-- [ ] edit score 
-- [ ] create a game
+- [ ] show team rewards  
+- [ ] show player status  
+- [ ] list teams as a simple user  
+- [ ] list my teams  
+- [ ] edit score  
+- [ ] create a game  
 - [ ] edit my profile  
 - [ ] show my profile  
 - [ ] show my team, and should contains invite players  
 - [ ] create a team page  
-- [ ] register page  
-- [ ] login page  
 
 ### In Progress
 
+- [ ] go to complete profile  
 
 ### Done ✓
 
+- [x] login page  
+- [x] register page  
 

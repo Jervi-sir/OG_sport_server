@@ -9,6 +9,7 @@ use App\Models\Team;
 use App\Models\User;
 use App\Models\Score;
 use App\Models\Skill;
+use App\Models\Profile;
 use App\Models\Position;
 use App\Models\Subscription;
 use Illuminate\Database\Seeder;
@@ -36,6 +37,8 @@ class DatabaseSeeder extends Seeder
                 $team->members()->attach($member->id, ['role' => $roles[array_rand($roles)]]);
             }
         });
+
+        Profile::factory()->count(500)->create();
 
         Subscription::factory()->count(10)->create();
 

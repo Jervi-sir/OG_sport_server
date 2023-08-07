@@ -5,7 +5,11 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+
                 //'resources/css/app.css',
+                'resources/materialize/css/materialize.css',
+                'resources/materialize/js/materialize.min.js',
+
                 'resources/js/app.js',
                 'resources/css/general.scss',
                 'resources/css/index.scss',

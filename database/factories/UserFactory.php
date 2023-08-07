@@ -25,13 +25,9 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
-
-            'position_id' => Position::inRandomOrder()->first()->id,
             
             'role_id' => Role::inRandomOrder()->first()->id,
-            'skill_id' => Skill::inRandomOrder()->first()->id,
-            'skill_level' => $this->faker->numberBetween(1, 10),
-            'contact_details' => $this->faker->paragraph,
+            
         ];
     }
 
