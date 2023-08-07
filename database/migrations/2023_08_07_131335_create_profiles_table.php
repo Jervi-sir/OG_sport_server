@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('position_id')->nullable()->constrained();
             $table->foreignId('skill_id')->nullable()->constrained();
             $table->integer('skill_level')->nullable();
-            $table->text('contact_details')->nullable();
+            $table->json('contact_details')->nullable();
 
             $table->timestamps();
         });

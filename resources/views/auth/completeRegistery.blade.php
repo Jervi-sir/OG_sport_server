@@ -4,14 +4,14 @@
 <div class="container mobile-screen-mock">
     <h2 class="center-align">Complete Registration</h2>
     <div class="row">
-        <form class="col s12" id="register_form">
+        <form class="col s12" id="register_form" method="POST" action="{{ route('storeRegistry') }}">
+            @csrf
             <div class="row">
                 <div class="input-field col s12">
-                    <select>
-                      <option value="" disabled selected>Choose your option</option>
+                    <select name="position_id">
+                      <optiondisabled selected>Choose your option</optiondisabled>
                       @foreach ($positions as $position)
                       <option value="{{ $position['id'] }}">{{ $position['name'] }}</option>
-                          
                       @endforeach
                     </select>
                     <label>Materialize Select</label>
@@ -19,8 +19,8 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <select>
-                        <option value="" disabled selected>Select Option 2</option>
+                    <select name="skill_id">
+                        <option disabled selected>Select Option 2</option>
                         @foreach ($skills as $skill)
                         <option value="{{ $skill['id'] }}">{{ $skill['name'] }}</option>
                             
@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <p class="range-field">
-                        <input type="range" id="experience" min="0" max="100" step="10"/>
+                        <input name="skill_level" type="range" id="experience" min="0" max="100" step="10"/>
                     </p>
                     <label for="test5">Level of the skill</label>
                 </div>
@@ -43,25 +43,26 @@
                     <label for="textarea1">Textarea</label>
                 </div>
             </div>
-            <!-- Social media input -->
-            <div class="input-field">
-                <select>
-                <option value="" disabled selected>Choose platform</option>
-                <option value="facebook">Facebook</option>
-                <option value="twitter">Twitter</option> 
-                <option value="instagram">Instagram</option>
-                </select>
-                <label>Select Platform</label>
+
+            <div id="socialMediaInputs">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <select class="browser-default" name="social_media[]" >
+                      <option value="" disabled selected>Choose your social media</option>
+                      <option value="facebook">Facebook</option>
+                      <option value="twitter">Twitter</option>
+                      <option value="instagram">Instagram</option>
+                    </select>
+                  </div>
+                  <div class="input-field col s6">
+                    <input name="social_link[]" placeholder="Social Media Link" type="text" class="validate">
+                  </div>
+                </div>
             </div>
-
-            <div class="input-field">
-                <input type="text" id="social-username" />
-                <label for="social-username">Username</label>
-            </div>
-
-            <!-- Add more button -->
-            <button class="btn" type="button" id="add-social">Add another</button>
-
+            
+            <div class="right-align">
+                <button id="addMore" type="button" class="btn waves-effect waves-light">Add More</button>
+            </div>              
             
             <div class="row">
                 <div class="input-field col s12">
@@ -86,16 +87,20 @@
 </script>
 
 <script>
-    const addBtn = document.getElementById('add-social');
-    const container = document.querySelector('form');
-  
-    addBtn.addEventListener('click', () => {
-      const select = document.querySelector('select').cloneNode(true);
-      const input = document.getElementById('social-username').cloneNode(true);
+    document.getElementById("addMore").addEventListener("click", function() {
+      var socialMediaInputs = document.getElementById("socialMediaInputs");
+      var firstRow = socialMediaInputs.getElementsByClassName("row")[0];
       
-      container.append(select);
-      container.append(input);
+      var clonedRow = firstRow.cloneNode(true); // This will clone all child nodes as well
+      
+      // Clear the input and select fields in the cloned row
+      clonedRow.getElementsByTagName("input")[0].value = '';
+      clonedRow.getElementsByTagName("select")[0].selectedIndex = 0;
+      
+      // Append the cloned row to the end of #socialMediaInputs
+      socialMediaInputs.appendChild(clonedRow);
     });
-  </script>
+</script>
+    
 
 @endsection

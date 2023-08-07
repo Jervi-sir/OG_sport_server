@@ -50,7 +50,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/complete-registery', [ProfileController::class, 'completeRegsitery'])->middleware('auth')->name('completeRegistery');
-Route::post('/complete-registery', [ProfileController::class, 'storeRegsitery'])->middleware('auth')->name('storeRegsitery');
+Route::get('/complete-registry', [ProfileController::class, 'completeRegistry'])->middleware('auth')->name('completeRegistry');
+Route::post('/complete-registry', [ProfileController::class, 'storeRegistry'])->middleware('auth')->name('storeRegistry');
 require __DIR__.'/auth.php';
 

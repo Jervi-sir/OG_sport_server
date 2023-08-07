@@ -16,7 +16,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 class ProfileController extends Controller
 {
 
-    public function completeRegsitery() 
+    public function completeRegistry() 
     {
         $user = Auth::user();
         if($user->hasCompletedRegistery == 1) {
@@ -53,21 +53,26 @@ class ProfileController extends Controller
     }
 
     
-    public function storeRegsitery(Request $request) 
+    public function storeRegistry(Request $request) 
     {
+        $social_media = $request->input('social_media');
+        $social_link = $request->input('social_link');
+
+        $social_media_links = array_combine($social_media, $social_link);
+
         $user = Auth::user();
-        if($user->hasCompletedRegistery == 1) {
+        if($user->hasCompletedRegistry == 1) {
             return redirect(RouteServiceProvider::HOME);
         }
-
-        $contact_details = $request->contact_details;
 
         $profile = new Profile();
         $profile->user_id = $user->id;
         $profile->position_id = $request->position_id;
         $profile->skill_id = $request->skill_id;
         $profile->skill_level = $request->skill_level;
-        $profile->contact_details = $contact_details;
+        $profile->contact_details = $social_media_links;
+
+        dd($profile);
         $profile->save();
 
        // return view('auth.completeRegistery');
